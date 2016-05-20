@@ -2,8 +2,11 @@
 #add the base image
 FROM lsucrc/crcbase
 MAINTAINER Jian Tao <jtao@cct.lsu.edu>
+
+#install required packages
 RUN  yum install -y gsl-devel xsd xerces-c-devel zlib-devel boost-devel
 USER crcuser
+
 #download the package
 WORKDIR /model
 RUN git clone https://github.com/SwissTPH/openmalaria.git
